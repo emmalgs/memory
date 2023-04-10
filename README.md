@@ -8,3 +8,8 @@ let id = 1;
 checkForMatch(id);  
 Expected Output: "It's a match!";
 
+Describe: generateCardGrid();
+
+Test: "It should output an array of randomly sorted card objects, assigned at random indexes"  
+Code: generateCardGrid();  
+Expected Output: [3,5,2,2,1,5,4,3,4,1]
