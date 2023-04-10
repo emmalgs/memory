@@ -1,8 +1,15 @@
 import { cards } from "./cards.js";
 
 export function generateCardGrid() {
+  const board = document.querySelector("#gameboard");
   let shuffled = shuffleCards(cards);
-  console.log(shuffled);
+  for (let i = 0; i < shuffled.length; i++) {
+    let id = Object.keys(shuffled[i]).join();
+    const div = document.createElement("div");
+    div.setAttribute("data-id", id);
+    div.innerText = "?";
+    board.append(div);
+  }
 }
 
 function shuffleCards(array) {
@@ -10,6 +17,6 @@ function shuffleCards(array) {
     let j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]]; 
   }
-  return array
+  return array;
 }
 
